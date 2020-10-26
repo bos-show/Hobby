@@ -1,0 +1,10 @@
+version: '3'
+services:
+  vue-hobby:
+    build: .
+    ports:
+      - 1111:8080
+    volumes:
+      - .:/app
+    stdin_open: true
+    tty: true

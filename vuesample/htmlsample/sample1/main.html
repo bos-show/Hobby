@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://unpkg.com/vue@2.4.4/dist/vue.min.js"></script>
+  </head>
+  <body>
+    <h1>Vue入門</h1>
+
+    <div id="sample01">
+      <h2>サンプル01：v-text</h2>
+      <p>二重中括弧で変数を囲う：{{text}}</p>
+      <p>属性で変数を指定する：<span v-text="text"></span></p>
+    </div>
+
+    <div id="sample02">
+      <h2>サンプル02：v-model</h2>
+      <input v-model="num" type="number">
+      <p>v-modelで指定した変数： {{num}}</p>
+      <p>変数に対して2を掛ける： {{num * 2}}</p>
+    </div>
+
+    <div id="sample03">
+      <h2>サンプル03：v-on</h2>
+      <input v-model="input" type="text">
+      <button v-on:click="output">入力文字列を反映</button>
+      <p>ボタンを押すと入力値をtext変数に代入：{{text}}</p>
+    </div>
+
+    <div id="sample04">
+      <h2>サンプル04：v-html</h2>
+      <div v-html="html"></div>
+    </div>
+
+    <div id="sample05">
+      <h2>サンプル05：v-show、v-if</h2>
+      <input type="checkbox" v-model="checked">
+      <p v-show="checked">v-showの属性を持つ要素</p>
+      <p v-if="checked">v-ifの属性を持つ要素</p>
+    </div>
+
+    <div id="sample06">
+      <h2>サンプル06：v-for</h2>
+      <ul>
+        <li v-for="item in items">{{item.content}}</li>
+      </ul>
+
+      <ul>
+        <li v-for="(item, index) in items">{{index + 1}}. {{item.content}}</li>
+      </ul>
+    </div>
+
+    <div id="sample07">
+      <h2>サンプル07：v-bind</h2>
+      <input type="radio" value="red" v-model="picked">赤色
+      <input type="radio" value="blue" v-model="picked">青色
+      <p v-bind:style="{color: picked}">サンプルテキスト</p>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+// DEMO Styles
+html,body {height: 100%;}body{display: flex;flex-direction:column;align-items: center;justify-content:center;width:100%;background:#F9D8AD;}.polylion{max-width: 100%;}
+
+
+// REQUIRED Styles
+// Updated post CSS-Tricks article
+// https://css-tricks.com/polylion
+// ===========================================
+
+$polylion-height: 800px;
+
+.polylion polygon {
+  opacity: 0;
+
+  .no-js & {
+    opacity: 1;
+  }
+}
+
+.polylion {
+  height: $polylion-height;
+
+  > polygon {
+    .no-cssanimations & {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}
